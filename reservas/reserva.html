@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RESERVA ESCENARIO DEPORTIVO</title>
+    <link rel="icon" type="image/png" href="/logo.png">
+    <link rel="stylesheet" href="/reservas/reserva.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <img src="/logo.png" alt="Logo de la pagina">
+        <form action="">
+            <label>Reserva de escenario</label>
+            <input type="date" placeholder="Fecha">
+            <select name="escenarios" id="escenarios" required>
+                <option value="">Escenario</option>
+                <option value="microfutbol">Microfútbol</option>
+                <option value="futbol">Fútbol</option>
+                <option value="tenis">Tenis</option>
+                <option value="balonacesto">Baloncesto</option>
+                <option value="cancha multifuncional">Cancha Multifuncional</option>
+                <option value="salon de eventos">Salón de eventos</option>
+            </select>
+            <input type="text" placeholder="Token/tikect">
+            <select name="metododo-pago" id="metododo-pago" required>
+                <option value="">metododo pago</option>
+                <option value="Tarjeta">Tarjeta</option>
+                <option value="pse">PSE</option>
+                <option value="efectivo">Efectivo</option>
+
+            </select>
+            <input type="time" placeholder="Hora">
+            <button type="submit">Reservar</button>
+            <a href="/index/index.html">←Volver</a>
+        </form>
+    </div>
+</body>
+</html>

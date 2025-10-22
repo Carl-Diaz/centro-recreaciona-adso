@@ -1,0 +1,1007 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    padding-top: 170px;
+}
+
+.container_nav {
+    background-color: #002237;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;            
+    padding: 5px 40px;
+
+    position: fixed;  /* 🔥 se queda fijo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;    /* queda por encima del contenido */
+}
+
+.logo {
+    display: flex;
+    flex-direction: column; /* Logo arriba y texto abajo */
+    align-items: center;
+    margin-left: 80px;
+    margin-top: 15px;
+    padding: 0;
+}
+
+.logo img {
+    max-width: 180px;
+    margin: 0;
+    padding: 0;
+}
+
+.logo h3 {
+    position: relative;
+    margin-top: -20px;
+    padding: 0;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+    font-family: 'Baloo Bhai', sans-serif;
+}
+
+.navegador ul {
+    list-style: none; /* elimina punticos */
+    margin: 0;
+    padding: 0;
+    display: flex; /* organiza los li en fila */
+    gap: 130px; /* espacio entre elementos */
+}
+
+.navegador li {
+    position: relative; /* cada li será referencia para su submenú */
+}
+
+.navegador a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 25px;
+}
+
+.navegador a:hover {
+    text-decoration: underline;
+}
+
+/*  Submenús (dropdowns) */
+.navegador li ul {
+    position: absolute;
+    top: 100%;   /* debajo del li padre */
+    left: 0;
+    background: #002237;
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    display: none; /* oculto por defecto */
+    flex-direction: column;
+    min-width: 200px;
+    align-items: center;
+    margin-left: -30px;
+    gap: 0;
+}
+
+.navegador li ul li a {
+    display: block;
+    padding: 10px;
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.navegador li ul li a:hover {
+    background: #0056b3;
+}
+
+/* 👆 Mostrar submenú al pasar el mouse */
+.navegador li:hover ul {
+    display: flex;
+}
+
+.btn-login button {
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    padding: 12px 40px;
+    margin-right: 120px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-size: 25px;
+    border-radius: 5px;
+}
+
+.btn-login button:hover {
+    background-color: #007bff;
+}
+
+/* Botón flotante */
+.menu-btn {
+    position: fixed;
+    top: 200px;
+    left: 0;
+    background: #1E90FF;
+    color: white;
+    font-size: 28px;
+    border-radius: 0 20px 20px 0;
+    padding: 12px 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.7);
+    transition: transform 0.3s ease, background 0.3s ease;
+    z-index: 1000;
+}
+
+.menu-btn:hover {
+    transform: scale(1.1);
+    background: #187bcd;
+}
+
+
+.icono img {
+    width: 60px;
+    height: 40px;
+    margin-left: 20px;
+    filter: invert(34%) sepia(99%) saturate(7471%) hue-rotate(204deg) brightness(95%) contrast(101%);
+}
+
+
+
+.icono:hover {
+    filter: invert(51%) sepia(93%) saturate(478%) hue-rotate(82deg) brightness(95%) contrast(93%);
+    transition: 0.3s;
+}
+
+
+
+    /* Menú lateral */
+.menu {
+    position: fixed;
+    top: 160px;
+    left: -400px;
+    width: 400px;
+    height: 800px;
+    background: rgba(20, 30, 48, 0.97);
+    padding-top: 80px;
+    transition: right 0.4s ease;
+    box-shadow: -4px 0 10px rgba(0,0,0,0.4);
+    z-index: 999;
+}
+
+.menu ul {
+    list-style: none;
+}
+
+.menu li {
+    margin: 25px 0;
+    text-align: left;
+    display: flex;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    transition: color 0.3s ease;
+    display: flex; 
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.menu button{
+    position: relative;
+    font-family: 'Baloo Bhai', sans-serif;
+    font-size: 25px;
+    background-color: rgb(142, 199, 78);
+    color: #fff;
+    border: none;
+    padding: 5px 110px;
+    cursor: pointer;
+
+
+}
+
+.menu button:hover{ 
+    background-color: green; 
+} 
+
+
+    /* Clase activa (abre el menú) */
+.menu.open {
+    left: 0;
+}
+
+
+.p_f_familia {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 800px;       /* Ajusta la altura del marco */
+    overflow: hidden;    /* Lo que se salga por abajo se corta */
+}
+
+.p_f_familia img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;   /* Se ajusta al marco sin deformarse */
+    object-position: top; /* Mantiene la parte de arriba visible */
+}
+
+.p_f_familia h1 {
+    position: absolute;
+    bottom: 0px;                 /* lo bajas un poco */
+    width: 100%;                   /* el texto ocupa el 90% del contenedor */
+    margin: 0 auto;               /* centrado */
+    left: 50%;
+    transform: translateX(-50%);  /* centra horizontalmente */
+    height: 220px;                /* altura del área del texto */
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 75px;
+    font-weight: bold;
+    text-align: center;           /* opciones: left | right | center | justify */
+    line-height: 1.2;             /* espacio entre líneas */
+    background: linear-gradient(to top, #060920, transparent);
+}
+
+.contenedor_info {
+    max-width: 80%;   
+    padding: 0 50px;  
+    font-family: 'Nunito', sans-serif;
+    margin-left: 100px;
+}
+
+.titulos {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.titulos h3 {
+    flex: 1;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.contenido {
+    display: flex;
+    justify-content: space-between;
+}
+
+.entrada p {
+    font-size: 45px;
+    font-weight: bold;
+    margin-left: 170px;
+    margin-top: -50px;
+}
+
+.entrada .precio {
+    color: #00c46c;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.beneficios .caja {
+    background: #fff8cc;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: -40px;
+    margin-right: 31px;
+}
+
+.beneficios p {
+    color: #0056d6;
+    font-weight: bold;
+    margin: 10px 0;
+    font-size: 25px;
+}
+
+
+.boton {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #00c46c;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s;
+    font-size: 40px;
+}
+
+.boton:hover {
+    background: #00994a;
+}
+
+
+.contenedor_cards {
+    display: flex;
+    justify-content: center;
+    gap: 40px;              /* espacio entre tarjetas */
+    margin: 50px auto;
+    max-width: 90%;
+    font-family: 'Nunito', sans-serif;
+}
+
+.card {
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 400px;
+    text-align: center;
+    overflow: hidden;       /* para que nada sobresalga */
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* efecto al pasar el mouse */
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.card h3 {
+    background: red;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+    padding: 15px 10px;
+    text-transform: uppercase;
+}
+
+.card p {
+    padding: 15px;
+    font-size: 20px;
+    color: #333;
+}
+
+
+.gym-container {
+    width: 100%;
+    overflow: hidden;
+    
+}
+
+.gym-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.gym-container .logo{
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.informacion-gym {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    font-family: 'Nunito', sans-serif;
+    margin-top: 180px;
+    font-size: 40px;
+    color: #fff;
+    background: linear-gradient(to top, #000, transparent);
+}
+
+.informacion-gym .btn-acceder {
+    margin-bottom: 250px;
+    color: #fff;
+    background-color: #FA7747;
+    border-radius: 5px;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+.gym-container{
+    background-image: url('../img/index/gym.jpg');
+    height: 790px;
+}
+
+.informacion-gym .btn-acceder:hover {
+    background-color: #E85C2A;
+}   
+
+.container-escenarios_deportivos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 50px auto;
+    max-width: 90%;
+}
+
+.container-escenarios_deportivos h3 {
+    font-family: 'Baloo Bhai 2', cursive;
+    color: #0D0633; 
+    text-transform: uppercase; 
+    font-size: 40px;
+    margin-right: 900px;
+    margin-top: -33px;
+}
+
+.container-escenarios_deportivos .linea-abajo-titulo {
+    width: 400px;
+    height: 2px;
+    background-color: #E53935; 
+    margin-right: 900px;
+    margin-top: -50px;
+}
+
+.container-escenarios_deportivos .linea-vertical{
+    width: 2px;
+    height: 250px;
+    background-color: #E53935;
+    margin-right: 899px;
+}
+
+.container-escenarios_deportivos .linea-horizontal {
+    width: 500px;
+    height: 2px;
+    background-color: #E53935; 
+    margin-right: 400px;
+    margin-top: -0px;
+}
+
+.info-escenarios{
+    background-color: #E53935;
+    color : #fff;
+    padding: 10px 50px 50px 50px;
+    font-size: 30px;
+    text-align: justify;
+    font-family: 'Baloo Bhai 2', sans-serif;
+    margin-left: 750px;
+    margin-top: -220px;
+}
+
+.info-escenarios .btn-acceder {
+    margin-bottom: 250px;
+    color: #E53935;
+    background-color: #fff;
+    padding: 5px 20px;
+    text-decoration: none;
+    margin-left: 280px;
+    font-size: 35px;
+}
+
+.info-escenarios .btn-acceder:hover {
+    background-color: #f1dddd;
+}   
+
+.collage_escenarios {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.collage_escenarios img {
+    width: 474px;
+    height: 250px;
+    object-fit: cover;
+}
+.collage_escenarios .fila1 {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.collage_escenarios .fila2 {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.titulo_parqueadero {
+    font-family: 'Baloo Bhai 2', cursive;
+    color: #0D0633; 
+    text-transform: uppercase; 
+    font-size: 40px;
+    margin-left: 49%;
+}
+
+.linea_abajo_titulo_parqueadero {
+    width: 75px;
+    height: 2px;
+    background-color: #E53935; 
+    margin-left: 49%;
+    margin-top: -30px;
+}
+
+.linea_vertical_parqueadero{
+    width: 2px;
+    height: 100px;
+    background-color: #E53935;
+    margin-left: 957px;
+}
+
+.container_parqueadero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px auto;
+    gap: 89px;
+    
+}
+
+.imagen_parqueadero {
+    position: relative;
+    margin-top: -120px;
+    margin-right: -20px;
+}
+
+.contenido_parqueadero {
+    background-color: #E53935;
+    color : #fff;
+    padding: 10px 50px 50px 50px;
+    font-size: 20px;
+    text-align: justify;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: -250px;
+    width: 600px;
+}
+
+.icono_informacion_parqueadero {
+    display: flex;
+    text-align: center;
+    font-family: 'arial', sans-serif;
+    font-size: 15px;
+    color: #333;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: -40px;
+}
+
+.icono_informacion_parqueadero .icono{
+    display: flex;
+    flex-direction: row;
+    color: #fff;
+    
+}
+
+.icono_informacion_parqueadero .icono p{
+    font-size: 15px;
+    margin-left: -20px;
+}
+
+.icono_informacion_parqueadero img {
+    width: 50px;
+    height: 50px;
+    margin-right: 29px;
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 40px;
+    justify-content: space-between;
+}
+
+.titulo_container_restaurante_adso {
+    font-family: 'Baloo Bhai 2', cursive;
+    color: #0D0633; 
+    text-transform: uppercase; 
+    text-align: center;
+    margin: 50px auto;
+    font-size: 40px;
+}
+
+.btn_acceder_restaurante .btn-acceder {
+    position: absolute;
+    color: #fff;
+    background-color: #FA7747;
+    padding: 10px 70px;
+    text-decoration: none;
+    margin-left: 800px;
+    font-size: 40px;
+    margin-top: -170px;
+    border-radius: 5px;
+}
+
+.btn_acceder_restaurante .btn-acceder:hover {
+    background-color: #E53935;
+}
+
+.titulo_container_restaurante_adso h3 {
+    margin-top: -50px;
+}
+
+.collage_restaurante {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* mismo ancho para las columnas */
+}
+
+.col_grande {
+    flex: 2; /* la columna central más ancha */
+}
+
+.item {
+    flex: 1;
+}
+
+.item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* recorta bien la imagen */
+    display: block;    /* elimina espacio fantasma de inline-block */
+}
+
+.titulo_container_tienda_adso {
+    font-family: 'Baloo Bhai 2', cursive;
+    color: #0D0633; 
+    text-transform: uppercase; 
+    text-align: center;
+    margin: 50px auto;
+    font-size: 40px;
+}
+
+.titulo_container_tienda_adso p{
+    font-family: 'Baloo Bhai 2', cursive;
+    color: #0D0633; 
+    text-align: center;
+    font-size: 30px;
+    text-align: justify;
+    padding: 0 300px 0 300px;
+    margin-top: -60px;
+}
+
+.container_tienda_adso{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 100px;
+}
+
+.info_deportes {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-top: -239px;
+    padding: 100px 0 0px 20px;
+}
+
+.info_deportes p{
+    font-size: 30px;
+    color: #fff;
+    margin: 50px 0 100px 50px;
+}
+
+.info_deportes a{
+    position: absolute;
+    color: #fff;
+    background-color: #FA7747;
+    padding: 5px 20px;
+    text-decoration: none;
+    font-size: 35px;
+    border-radius: 15px;
+    margin-left: 500px;
+    margin-top: 40px; 
+}
+
+.info_deportes a:hover{
+    background-color: #E53935;
+}
+
+.info_mecatos{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-top: -239px;
+    padding: 100px 0 0px 20px;
+}
+
+.info_mecatos p{
+    font-size: 30px;
+    color: #fff;
+    margin: 50px 0 100px 50px;
+}
+
+.info_mecatos a{
+    position: absolute;
+    color: #fff;
+    background-color: #FA7747;
+    padding: 5px 20px;
+    text-decoration: none;
+    font-size: 35px;
+    border-radius: 15px;
+    margin-left: 500px;
+    margin-top: 40px;  
+}
+
+.info_mecatos a:hover{
+    background-color: #E53935;
+}
+
+
+.salon img{
+    margin-top: 100px;
+}
+
+.info_salon{
+    display: flex;
+    background: rgba(0, 1, 59, 0.8);
+    position: relative;
+    margin-top: -634px;
+    padding: 315px 0;
+}
+
+.info_salon h2{
+    font-size: 60px;
+    font-family: 'Baloo Bhai 2', cursive;
+    color: #fff;
+    margin-left: 220px;
+    margin-top: -200px;
+}
+
+.info_salon p{
+    font-size: 30px;
+    font-family: 'Nunito', sans-serif;
+    color: #fff;
+    margin-left: 200px;
+    line-height: 1.8; /* 1.8 veces el tamaño de la fuente */
+    position: absolute;
+    margin-top: -40px;
+}
+
+.info_salon a{
+    font-family: 'Baloo Bhai 2', cursive;
+    font-size: 35px;
+    text-decoration: none;
+    background-color: #18C346;
+    padding: 5px 40px;
+    color: #fff;
+    position: absolute;
+    margin: 50px 0 0 800px;
+    
+}
+
+.info_salon a:hover{
+    background-color: rgb(22, 148, 22);
+}
+
+.img_salon{
+    display: flex;
+    padding: 30px;
+    border-radius: 20px;
+    margin: 0 450px;
+    justify-content: space-between;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    position: absolute;
+    margin-top: -100px;
+    background-color: #fff;
+}
+
+.container_restricciones {
+    display: flex;
+    align-items: center;                       
+    padding: 40px;              
+    margin: 200px 100px 0 100px;          
+    max-width: 100%;          
+    background-color: #26193F;  
+    border-radius: 10px;        
+    color: white;             
+    font-family: 'Baloo Bhai 2', cursive;
+    
+}
+
+.info_restricciones {
+    flex: 1;            /* el texto ocupa el resto del espacio */
+    margin-left: 800px;
+}
+
+.info_restricciones h2 {
+    font-size: 50px;
+    margin-bottom: 15px;
+    margin-top: -20px;
+    
+}
+
+.info_restricciones ul {
+    list-style: disc;
+    margin-left: 20px;
+    margin-bottom: 15px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+    line-height: 1.8; /* 1.8 veces el tamaño de la fuente */
+}
+
+.info_restricciones p {
+    font-size: 20px;
+    font-family: 'Nunito', sans-serif;
+}
+
+.img_restricciones img{
+    width: 750px; 
+    margin-top: -500px;
+    position: absolute;
+}
+
+.container_comentarios {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 70px 0;
+}
+
+
+.container_comentarios img {
+    width: 450px;  
+    height: auto;
+    margin-left: 400px;
+}
+
+.info_comentarios{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.info_comentarios .p1,
+.info_comentarios .p2 {
+    position: relative;
+    background: #fff;
+    padding: 20px 50px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    max-width: 400px;
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin-right: 400px;
+}
+
+/* Bocadillo (triángulo abajo) */
+.info_comentarios .p1::after,
+.info_comentarios .p2::after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 40px;
+    border-width: 20px 20px 0;
+    border-style: solid;
+    border-color: #fff transparent transparent transparent;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+.estrellas i {
+    color: gold;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.espacio_comentar{
+    display: flex;
+    max-width: 70%;
+    margin: 0 400px 30px;
+}
+
+.espacio_comentar textarea {
+    width: 200px;
+    padding: 10px;
+    border: 1px solid #8b8b8b;
+    resize: none; /* evita que el usuario cambie el tamaño */
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+    padding-right: 240px;
+}
+
+.espacio_comentar a{
+    font-family: 'Baloo Bhai 2', cursive;
+    font-size: 40px;
+    text-decoration: none;
+    background-color: #FF1010;
+    padding: 5px 90px;
+    color: #fff;
+    margin-left: 150px;
+    justify-content: center; /* horizontal */
+    align-items: center;     /* vertical */
+    
+}
+
+.espacio_comentar a:hover{
+    background-color: #9b0404;
+}
+
+.espacio_comentar .info_estrellas{
+    margin-left: 40px;
+}
+
+.info_estrellas p{
+    width: 300px;
+    font-size: 30px;
+    position: absolute;
+    margin-top: -17px;
+}
+
+.info_estrellas .estrellas {
+    width: 300px;
+}
+.info_estrellas .estrellas i{
+    font-size: 45px;
+    margin-top: 20px;
+}
+
+.container_footer{
+    display: flex;
+    width: 100%;
+    background-color: #313131;
+    justify-content: space-between;
+    color: #fff;
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+}
+
+.container_footer h4{
+    font-size: 40px;
+}
+
+.container_footer .icono1{
+    display: flex;
+    gap: 10px;
+}
+
+
+.container_footer img{
+    width: 40px;
+    height: 40px;
+    
+}
+
+.container_footer .logo{
+    width: 400px;
+    height: 300px;
+    position: relative;
+    margin-top: 50px;
+    margin-left: 200px;
+}
+
+.redes_sociales{
+    display: flex;
+    gap: 30px;
+    margin-right: 300px;
+    margin-top: 150px;
+}
+
+.redes_sociales img{
+    width: 40px;
+    height: 40px;
+}
+
+.lienas_footer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.linea_pie_pagina{
+    background-color: #313131;
+    width: 10%;
+    height: 2px;
+}
+
+.final_footer{
+    display: flex;
+    background-color: #313131;
+    color: #fff;
+    justify-content: center;
+    gap: 650px;
+}

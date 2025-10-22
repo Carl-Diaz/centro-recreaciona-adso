@@ -1,0 +1,524 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    padding-top: 170px;
+}
+
+.container_nav {
+    background-color: #002237;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;            
+    padding: 5px 40px;
+
+    position: fixed;  /* 🔥 se queda fijo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;    /* queda por encima del contenido */
+}
+
+.logo {
+    display: flex;
+    flex-direction: column; /* Logo arriba y texto abajo */
+    align-items: center;
+    margin-left: 80px;
+    margin-top: 15px;
+    padding: 0;
+}
+
+.logo img {
+    max-width: 180px;
+    margin: 0;
+    padding: 0;
+}
+
+.logo h3 {
+    position: relative;
+    margin-top: -20px;
+    padding: 0;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+    font-family: 'Baloo Bhai', sans-serif;
+}
+
+.navegador ul {
+    list-style: none; /* elimina punticos */
+    margin: 0;
+    padding: 0;
+    display: flex; /* organiza los li en fila */
+    gap: 130px; /* espacio entre elementos */
+}
+
+.navegador li {
+    position: relative; /* cada li será referencia para su submenú */
+}
+
+.navegador a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 25px;
+}
+
+.navegador a:hover {
+    text-decoration: underline;
+}
+
+/*  Submenús (dropdowns) */
+.navegador li ul {
+    position: absolute;
+    top: 100%;   /* debajo del li padre */
+    left: 0;
+    background: #002237;
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    display: none; /* oculto por defecto */
+    flex-direction: column;
+    min-width: 200px;
+    align-items: center;
+    margin-left: -30px;
+    gap: 0;
+}
+
+.navegador li ul li a {
+    display: block;
+    padding: 10px;
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.navegador li ul li a:hover {
+    background: #0056b3;
+}
+
+/* 👆 Mostrar submenú al pasar el mouse */
+.navegador li:hover ul {
+    display: flex;
+}
+
+.btn-login button {
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    padding: 12px 40px;
+    margin-right: 120px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-size: 25px;
+    border-radius: 5px;
+}
+
+.btn-login button:hover {
+    background-color: #007bff;
+}
+
+/* Botón flotante */
+.menu-btn {
+    position: fixed;
+    top: 200px;
+    left: 0;
+    background: #1E90FF;
+    color: white;
+    font-size: 28px;
+    border-radius: 0 20px 20px 0;
+    padding: 12px 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.7);
+    transition: transform 0.3s ease, background 0.3s ease;
+    z-index: 1000;
+}
+
+.menu-btn:hover {
+    transform: scale(1.1);
+    background: #187bcd;
+}
+
+
+.icono img {
+    width: 60px;
+    height: 40px;
+    margin-left: 20px;
+    filter: invert(34%) sepia(99%) saturate(7471%) hue-rotate(204deg) brightness(95%) contrast(101%);
+}
+
+
+
+.icono:hover {
+    filter: invert(51%) sepia(93%) saturate(478%) hue-rotate(82deg) brightness(95%) contrast(93%);
+    transition: 0.3s;
+}
+
+
+
+    /* Menú lateral */
+.menu {
+    position: fixed;
+    top: 160px;
+    left: -400px;
+    width: 400px;
+    height: 800px;
+    background: rgba(20, 30, 48, 0.97);
+    padding-top: 80px;
+    transition: right 0.4s ease;
+    box-shadow: -4px 0 10px rgba(0,0,0,0.4);
+    z-index: 999;
+}
+
+.menu ul {
+    list-style: none;
+}
+
+.menu li {
+    margin: 25px 0;
+    text-align: left;
+    display: flex;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    transition: color 0.3s ease;
+    display: flex; 
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.menu button{
+    font-family: 'Baloo Bhai', sans-serif;
+    font-size: 25px;
+    background-color: rgb(142, 199, 78);
+    color: #fff;
+    border: none;
+    padding: 5px 110px;
+    cursor: pointer;
+
+
+}
+
+.menu button:hover{ 
+    background-color: green; 
+} 
+
+
+    /* Clase activa (abre el menú) */
+.menu.open {
+    left: 0;
+}
+
+
+
+.f-principal{
+    display: flex;
+    position: relative;
+    margin-top:-10px;
+}
+
+.container-servicios{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #0D0633;
+    font-family: 'Baloo Bhai', sans-serif;
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.container-servicios h3{
+
+    margin-right: 850px;
+}
+
+
+.container-cards-servicios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 50px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.container-cards-servicios .card {
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 20px;
+    transition: transform 0.6s ease; /* duración y suavidad */
+}
+
+.container-cards-servicios .card:hover {
+    transform: translateY(-5px); /* efecto al pasar el mouse */
+}
+
+.container-cards-servicios .card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+.container-cards-servicios .card h3 {
+    color: #0D0633;
+    font-weight: bold;
+    font-size: 18px;
+    margin: 10px 0;
+    font-size: 25px;
+    font-family: 'Baloo Bhai', sans-serif;
+
+}
+
+.container-cards-servicios .card p {
+    padding: 0 25px;
+    font-size: 17px;
+    color: #555;
+}
+
+.videojuego {
+    display: grid;
+    justify-items:left;  
+    align-items: end;   
+    background-image: url("/img/actividades/seccions_jovenes/area-videojuegos.jpg"); /* imagen */
+    background-size: cover;      /* se adapta al contenedor */
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 300px;
+    padding: 100px;
+    margin-top: 50px;
+    margin-right: -25px
+}
+
+
+.videojuego .info .sub-titulo{
+    text-align: center;
+    color: #fff;
+    font-size: 25px;
+    font-family: 'Baloo Bhai', sans-serif;
+}
+
+.videojuego .info h2{
+    text-align: center;
+    color: #fff;
+    font-size: 60px;
+    font-family: 'Baloo Bhai', sans-serif;
+}
+
+.videojuego .info .info_texto{
+    text-align:justify;
+    color: #fff;
+    font-size: 30px;
+    font-family: 'Quicksand', sans-serif;
+    width: 1000px;
+}
+
+.videojuego .collage-fotos{
+    display: flex;
+    background-color: #fff;
+    padding: 30px;
+    border-radius:10px 10px 0 0;
+    gap: 15px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    margin-left: 200px;
+    margin-top: 40px;
+}
+
+.campeonatos h2 {
+    text-align: center;
+    font-size: 40px;
+    margin: 150px 0 20px;
+    color: #0D0633; 
+    font-weight: bold;
+    font-family: 'Baloo Bhai', sans-serif;
+
+}
+
+.campeonato-cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    font-family: 'Baloo Bhai', sans-serif;
+
+}
+
+.campeonato-cards .card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 25px 20px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
+.campeonato-cards .card:hover {
+    transform: translateY(-8px);
+}
+
+.campeonato-cards .card img {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.campeonato-cards .card h3 {
+    font-size: 20px;
+    color: #1a1244;
+    margin-bottom: 12px;
+    font-weight: bold;
+}
+
+.campeonato-cards .card p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.4;
+}
+
+.container-toboganes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 50px auto;
+    max-width: 80%;
+}
+
+.container-toboganes h3 {
+    font-family: 'Baloo Bhai 2', cursive;
+    color: #0D0633; 
+    text-transform: uppercase; 
+    font-size: 40px;
+    margin-right: 900px;
+    margin-top: -33px;
+}
+
+.container-toboganes .linea-abajo-titulo {
+    width: 200px;
+    height: 2px;
+    background-color: #D9723A; 
+    margin-right: 900px;
+    margin-top: -10px;
+}
+
+.container-toboganes .linea-vertical{
+    width: 2px;
+    height: 250px;
+    background-color: #D9723A;
+    margin-right: 899px;
+}
+
+.container-toboganes .linea-horizontal {
+    width: 500px;
+    height: 2px;
+    background-color: #D9723A; 
+    margin-right: 400px;
+    margin-top: -0px;
+}
+
+.info-tobogan{
+    background-color: #D9723A;
+    color : #fff;
+    padding: 10px 50px 10px 50px;
+    font-size: 30px;
+    text-align: justify;
+    font-family: 'Baloo Bhai 2', sans-serif;
+    margin-left: 550px;
+    margin-top: -150px;
+}
+
+.container_footer{
+    display: flex;
+    width: 100%;
+    background-color: #313131;
+    justify-content: space-between;
+    color: #fff;
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+    margin-top: 30px;
+}
+
+
+.container_footer .info_footer{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.container_footer .info_footer p{
+    margin-top: 10px;
+}
+
+
+.container_footer h4{
+    font-size: 40px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.container_footer .icono1{
+    display: flex;
+    gap: 10px;
+}
+
+
+.container_footer img{
+    width: 40px;
+    height: 40px;
+    
+}
+
+.container_footer .logo{
+    width: 400px;
+    height: 300px;
+    position: relative;
+    margin-top: 50px;
+    margin-left: 200px;
+}
+
+.redes_sociales{
+    display: flex;
+    gap: 30px;
+    margin-right: 300px;
+    margin-top: 150px;
+}
+
+.redes_sociales img{
+    width: 40px;
+    height: 40px;
+}
+
+.lienas_footer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.linea_pie_pagina{
+    background-color: #313131;
+    width: 10%;
+    height: 2px;
+}
+
+.final_footer{
+    display: flex;
+    background-color: #313131;
+    color: #fff;
+    justify-content: center;
+    gap: 650px;
+    padding-bottom:20px ;
+}

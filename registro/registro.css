@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.formulario img{
+    width: 300px;
+}
+
+.container{
+    display: flex;
+}
+
+.container .img{
+    position: relative;
+    width: 40%;
+    height: 970px;
+    background: url("/img/formularios/img-registro.jpg") center / cover no-repeat;
+    display: flex;
+    align-items: flex-end;
+    text-align: center;
+}
+
+.container .img h2{
+    color: #fff;
+    font-size: 40px;
+    font-family: 'Baloo Bhai', sans-serif;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 20px;
+}
+
+.formulario{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    align-items: center;
+    justify-content: center;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 35%;
+    margin-top: 10px;
+}
+
+input{
+    font-size: 20px;
+    border: none;
+    border: 1px solid #808080;
+    padding: 10px;
+    width: 100%;
+    border-radius: 10px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+input:focus{
+    outline: none;
+    box-shadow: 0 0 20px #4F5BE6;
+    background: rgba(89, 75, 212, 0.1);
+    transform: scale(1.05);
+}
+
+h3{
+    font-family: 'Quicksand', sans-serif;
+    font-size: 30px;
+    width: 37%;
+    text-align: left;
+}
+
+select{
+    width: 105%;
+    border: none;
+    border: 1px solid #808080;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 20px;
+    color: #808080;
+}
+
+button{
+    padding: 13px;
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: #4F5BE6;
+    color: #fff;
+    border: none;
+    width: 105%;
+}
+
+p{
+    width: 105%;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 20px;
+}
+a{
+    text-decoration: none;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pago por PSE </title>
+    <link rel="icon" type="image/png" href="/logo.png">
+    <link rel="stylesheet" href="/pago-PSE/pago_pse.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="container">
+        <img src="/logo.png" alt="Logo de la pagina">
+        <form action="/registro/registro.html">
+            <label>Pago por PSE</label>
+            <input type="Email" placeholder="Email" required>
+            <div class="combo-box">
+
+                <select required>
+                    <option value="">Afiliación  / Reserva</option>
+                    <option value="Afiliacion">Afiliación</option>
+                    <option value="Reserva">Reserva</option>
+                </select>
+
+                <select required>
+                    <option value="">Tipo de cuenta</option>
+                    <option value="ahorros">Cuenta de Ahorros</option>
+                    <option value="corriente">Cuenta Corriente</option>
+                </select>
+
+                <select required>
+                    <option value="">Entidad bancaria</option>
+                    <option value="bancolombia">Bancolombia</option>
+                    <option value="bogota">Banco de Bogotá</option>
+                    <option value="davivienda">Davivienda</option>
+                    <option value="occidente">Banco de Occidente</option>
+                    <option value="bbva">BBVA</option>
+                    <option value="avvillas">Banco AV Villas</option>
+                    <option value="cajasocial">Banco Caja Social</option>
+                    <option value="agrario">Banco Agrario</option>
+                    <option value="colpatria">Scotiabank Colpatria</option>
+                    <option value="itau">Banco Itaú</option>
+                    <option value="falabella">Banco Falabella</option>
+                    <option value="nequi">Nequi</option>
+                    <option value="daviplata">Daviplata</option>
+                    <option value="lulo">Lulo Bank</option>
+                    <option value="dale">Dale!</option>
+                    <option value="movii">MOVii</option>
+                </select>
+
+            </div>
+            <button type="submit">Pagar</button>
+            <a href="/registro/registro.html">←Volver al método de pago</a>
+        </form>
+    </div>
+</body>
+</html>

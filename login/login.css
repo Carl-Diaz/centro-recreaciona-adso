@@ -1,0 +1,117 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    display: flex;
+}
+
+.img-login{
+    position: relative;
+    width:40%;
+    height: 970px;
+    background: url("/img/formularios/img-login.jpg")center/ cover no-repeat;
+    display: flex;
+    text-align: center;
+    align-items: end;
+    justify-content: center;
+}
+
+
+
+.img-login h2{
+    color: #fff;
+    font-size: 50px;
+    font-family: 'Baloo Bhai', sans-serif;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 20px;
+}
+
+.formulario{
+    display: flex;
+    width: 60%;
+    align-items:center;
+    justify-content:center;
+
+}
+
+
+.formulario div{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content:center;
+    gap: 20px;
+}
+
+.formulario img{
+    width: 300px;
+}
+
+.formulario h2{
+    font-family: 'Baloo Bhai', sans-serif;
+    font-size: 40px;
+    text-align: center;
+    color: #5e607a;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    align-items: center;
+}
+
+form p{
+    font-size: 20px;
+    width: 72%;
+}
+
+input{
+    font-size: 20px;
+    border: none;
+    border: 1px solid #808080;
+    padding: 10px;
+    width: 70%;
+    border-radius: 10px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+input:focus{
+    outline: none;
+    box-shadow: 0 0 20px #4F5BE6;
+    background: rgba(89, 75, 212, 0.1);
+    transform: scale(1.05);
+}
+
+button{
+    padding: 13px;
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: #4F5BE6;
+    color: #fff;
+    border: none;
+    width: 73%;
+}
+
+.registrarse{
+    position: relative;
+    display: flex;
+    width: 100%;
+    font-size: 20px; 
+    font-family: 'Quicksand', sans-serif;
+    font-size: 20px;
+
+}
+
+p{
+    font-family: 'Quicksand', sans-serif;
+}
+
+a{
+    text-decoration: none;
+    font-family: 'Quicksand', sans-serif;
+
+}

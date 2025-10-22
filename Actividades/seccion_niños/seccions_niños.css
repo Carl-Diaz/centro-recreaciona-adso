@@ -1,0 +1,717 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    padding-top: 170px;
+}
+
+.container_nav {
+    background-color: #002237;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;            
+    padding: 5px 40px;
+
+    position: fixed;  /* 🔥 se queda fijo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;    /* queda por encima del contenido */
+}
+
+.logo {
+    display: flex;
+    flex-direction: column; /* Logo arriba y texto abajo */
+    align-items: center;
+    margin-left: 80px;
+    margin-top: 15px;
+    padding: 0;
+}
+
+.logo img {
+    max-width: 180px;
+    margin: 0;
+    padding: 0;
+}
+
+.logo h3 {
+    position: relative;
+    margin-top: -20px;
+    padding: 0;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+    font-family: 'Baloo Bhai', sans-serif;
+}
+
+.navegador ul {
+    list-style: none; /* elimina punticos */
+    margin: 0;
+    padding: 0;
+    display: flex; /* organiza los li en fila */
+    gap: 130px; /* espacio entre elementos */
+}
+
+.navegador li {
+    position: relative; /* cada li será referencia para su submenú */
+}
+
+.navegador a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 25px;
+}
+
+.navegador a:hover {
+    text-decoration: underline;
+}
+
+/*  Submenús (dropdowns) */
+.navegador li ul {
+    position: absolute;
+    top: 100%;   /* debajo del li padre */
+    left: 0;
+    background: #002237;
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    display: none; /* oculto por defecto */
+    flex-direction: column;
+    min-width: 200px;
+    align-items: center;
+    margin-left: -30px;
+    gap: 0;
+}
+
+.navegador li ul li a {
+    display: block;
+    padding: 10px;
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.navegador li ul li a:hover {
+    background: #0056b3;
+}
+
+/* 👆 Mostrar submenú al pasar el mouse */
+.navegador li:hover ul {
+    display: flex;
+}
+
+.btn-login button {
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    padding: 12px 40px;
+    margin-right: 120px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-size: 25px;
+    border-radius: 5px;
+}
+
+.btn-login button:hover {
+    background-color: #007bff;
+}
+
+ /* Botón flotante */
+.menu-btn {
+    position: fixed;
+    top: 200px;
+    left: 0;
+    background: #1E90FF;
+    color: white;
+    font-size: 28px;
+    border-radius: 0 20px 20px 0;
+    padding: 12px 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.7);
+    transition: transform 0.3s ease, background 0.3s ease;
+    z-index: 1000;
+}
+
+.menu-btn:hover {
+    transform: scale(1.1);
+    background: #187bcd;
+}
+
+
+.icono img {
+    width: 60px;
+    height: 40px;
+    margin-left: 20px;
+    filter: invert(34%) sepia(99%) saturate(7471%) hue-rotate(204deg) brightness(95%) contrast(101%);
+}
+
+
+
+.icono:hover {
+    filter: invert(51%) sepia(93%) saturate(478%) hue-rotate(82deg) brightness(95%) contrast(93%);
+    transition: 0.3s;
+}
+
+
+
+    /* Menú lateral */
+.menu {
+    position: fixed;
+    top: 160px;
+    left: -400px;
+    width: 400px;
+    height: 800px;
+    background: rgba(20, 30, 48, 0.97);
+    padding-top: 80px;
+    transition: right 0.4s ease;
+    box-shadow: -4px 0 10px rgba(0,0,0,0.4);
+    z-index: 999;
+}
+
+.menu ul {
+    list-style: none;
+}
+
+.menu li {
+    margin: 25px 0;
+    text-align: left;
+    display: flex;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    transition: color 0.3s ease;
+    display: flex; 
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.menu button{
+    font-family: 'Baloo Bhai', sans-serif;
+    font-size: 25px;
+    background-color: rgb(142, 199, 78);
+    color: #fff;
+    border: none;
+    padding: 5px 110px;
+    cursor: pointer;
+
+
+}
+
+.menu button:hover{ 
+    background-color: green; 
+} 
+
+
+    /* Clase activa (abre el menú) */
+.menu.open {
+    left: 0;
+}
+
+
+.titulo_seccion_niños {
+    display: grid;
+    justify-items: center;  
+    align-items: end;       
+    background-image: url("/img/actividades/seccions_niños/seccion_niños.png");
+    background-size: contain;      /* muestra la imagen completa */
+    background-repeat: no-repeat;  /* evita que se repita */
+    background-position: center;   /* la centra */
+    height: 600px;
+    padding: 160px;
+    margin-top: -11px;
+    
+}
+
+
+.titulo_seccion_niños h2 {
+    color: white;
+    font-size: 30px;
+    text-align: justify;
+    font-family: 'Baloo Bhai', sans-serif;
+    font-size: 60px;
+    margin-bottom: -290px;
+
+}
+.titulo_seccion_niños h3 {
+    color: white;
+    font-size: 30px;
+    text-align: justify;
+    font-family: 'Baloo Bhai', sans-serif;
+    font-size: 70px;
+    color: red;
+    background-color: rgb(182 183 187 / 60%);
+    padding: 10px 100%;
+    margin-bottom: -120px;
+}
+
+.parque-infantil{
+    display: grid;
+    grid-template-areas: 
+    "nuestos_servicios nuestos_servicios"
+    "texto img_parque"
+    "collage-parque collage-parque";
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    margin: 0 200px 0 200px;
+}
+
+.parque-infantil .nuestos_servicios {
+    grid-area: nuestos_servicios;
+    place-items: center;
+    font-family: 'Baloo Bhai', sans-serif;
+    font-size: 30px;
+    color: #0D0633;
+    
+}
+
+.parque-infantil .texto h2{
+    font-size: 40px;
+    color: #0D0633;
+    font-family: 'Baloo Bhai', sans-serif;
+    margin-right: 40px;
+}
+
+.parque-infantil .texto .linea{
+    background-color:#0D0633 ;
+    width: 46%;
+    height: 2px;
+}
+
+.parque-infantil .texto .sub-titulo{
+    font-size: 20px;
+    color: #575757;
+    font-family: 'Quicksand', sans-serif;
+    text-align: justify;
+}
+
+.parque-infantil .texto .info{
+    font-size: 25px;
+    color: #575757;
+    font-family: 'Quicksand', sans-serif;
+    text-align: justify;
+    margin-top: 40px;
+    width: 85%;
+}
+
+
+.parque-infantil .texto {
+    grid-area: texto;
+    
+}
+.parque-infantil .collage-parque {
+    grid-area: collage-parque;
+    padding: 25px 35px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.50);
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin-top: -100px;
+    background-color: #fff;
+    border-radius: 10px 10px 0 0;
+    margin-left:  40px;
+}
+
+.conatiner-zoo{
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    gap: 0;
+}
+
+.conatiner-zoo .sub-titulo{
+    font-size: 20px;
+    color: #575757;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.conatiner-zoo h2{
+    font-size: 40px;
+    color: #0D0633;
+    font-family: 'Baloo Bhai', sans-serif;
+}
+
+.conatiner-zoo .info{
+    font-size: 25px;
+    color: #575757;
+    font-family: 'Quicksand', sans-serif;
+    text-align:center;
+    margin-top: 40px;
+    width: 53%;
+    margin: 0;
+}
+
+.container-cards-zoo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 50px;
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 40px;
+    transition: transform 0.6s ease; /* duración y suavidad */
+
+}
+
+.card {
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.6s ease; /* duración y suavidad */
+
+
+    
+}
+.card:hover {
+    transform: translateY(-5px); /* efecto al pasar el mouse */
+}
+
+.card img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+.card h3 {
+    background: red;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px;
+    font-size: 18px;
+    margin: 0;
+    font-size: 25px;
+    font-family: 'Quicksand', sans-serif;
+
+}
+
+.card p {
+    padding: 25px;
+    font-size: 15px;
+    color: #555;
+}
+
+.titulo-guarderia{
+    display: flex;
+    flex-direction: column;
+    margin-top: 80px;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.titulo-guarderia p{
+    color: #6B5D5D;
+    margin-left: 50px;
+}
+
+.titulo-guarderia h2{
+    color: #0D0633;
+    font-size: 40px;
+    font-family: 'Baloo Bhai', sans-serif;
+    margin-left: 30px;
+}
+
+.lineas-guarderia{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    margin-left: 8px;
+}
+
+.guarderia-linea-horizontal{
+    background-color: #FF0000;
+    width: 5%;
+    height: 2px;
+    margin: 0;
+    margin-right: 110px;
+}
+
+.guarderia-linea-vertical{
+    background-color: #FF0000; 
+    width: 2px;
+    height: 50px;
+    margin: 0;
+    margin-right: 110px;
+}
+
+.container-guarderia{
+    display: flex;
+    gap: 80px;
+    margin-left: 300px
+}
+
+.container-guarderia{
+    width: 1300px;
+}
+
+.container-guarderia .imagen{
+    position: relative;
+    margin-top: -50px;
+    margin-left: -130px;
+}
+
+.info-guarderia{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    background-color: #FF0000;
+    padding: 30px;
+    height: 240px;
+    
+}
+
+.info-guarderia .info{
+    color: #ffffff;
+    font-family: 'Quicksand', sans-serif;
+    text-align: justify;
+    font-size: 17px;
+}
+
+.info-guarderia .iconos{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.info-guarderia .iconos .icono{
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    gap: 10px;
+}
+
+.info-guarderia .iconos .icono p{
+    display: flex;
+    color: #fff;
+    position: relative;
+    margin-top: 20px;
+
+}
+
+.info-guarderia .iconos .icono img{
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 40px;
+}
+
+.organizador-eventos {
+    display: grid;
+    justify-items: center;  
+    align-items: end;   
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), /* capa negra */
+        url("/img/actividades/seccions_niños/organizador-eventos.jpg"); /* imagen */
+    background-size: cover;      /* se adapta al contenedor */
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 600px;
+    padding: 60px;
+    margin-top: 50px;
+}
+
+
+.organizador-eventos .info .sub-titulo{
+    text-align: center;
+    color: #fff;
+    font-size: 25px;
+    font-family: 'Baloo Bhai', sans-serif;
+}
+
+.organizador-eventos .info h2{
+    text-align: center;
+    color: #fff;
+    font-size: 60px;
+    font-family: 'Baloo Bhai', sans-serif;
+}
+
+.organizador-eventos .info .info_texto{
+    text-align:justify;
+    color: #fff;
+    font-size: 30px;
+    font-family: 'Quicksand', sans-serif;
+    width: 1000px;
+}
+
+.organizador-eventos .collage-fotos{
+    display: flex;
+    background-color: #fff;
+    padding: 30px;
+    border-radius:10px 10px 0 0;
+    gap: 15px;
+    margin-bottom: -200px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+
+}
+
+.conatiner-vigilancia{
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    gap: 0;
+    margin-top: 180px;
+}
+
+.conatiner-vigilancia .sub-titulo{
+    font-size: 20px;
+    color: #575757;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.conatiner-vigilancia h2{
+    font-size: 40px;
+    color: #0D0633;
+    font-family: 'Baloo Bhai', sans-serif;
+}
+
+.conatiner-vigilancia .info{
+    font-size: 25px;
+    color: #575757;
+    font-family: 'Quicksand', sans-serif;
+    text-align:center;
+    margin-top: 40px;
+    width: 53%;
+    margin: 0;
+}
+
+.container-cards-vigilancia {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 50px;
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 40px;
+}
+
+.container-cards-vigilancia .card {
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.6s ease; /* duración y suavidad */
+}
+
+.container-cards-vigilancia .card:hover {
+    transform: translateY(-10px); /* movimiento suave */
+}
+
+
+.container-cards-vigilancia .card img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+.container-cards-vigilancia .card h3 {
+    background: red;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px;
+    font-size: 18px;
+    margin: 0;
+    font-size: 25px;
+    font-family: 'Quicksand', sans-serif;
+
+}
+
+.container-cards-vigilancia .card p {
+    padding: 25px;
+    font-size: 17px;
+    color: #555;
+}
+
+.container_footer{
+    display: flex;
+    width: 100%;
+    background-color: #313131;
+    justify-content: space-between;
+    color: #fff;
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+    margin-top: 30px;
+}
+
+
+.container_footer .info_footer{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.container_footer .info_footer p{
+    margin-top: 10px;
+}
+
+
+.container_footer h4{
+    font-size: 40px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.container_footer .icono1{
+    display: flex;
+    gap: 10px;
+}
+
+
+.container_footer img{
+    width: 40px;
+    height: 40px;
+    
+}
+
+.container_footer .logo{
+    width: 400px;
+    height: 300px;
+    position: relative;
+    margin-top: 50px;
+    margin-left: 200px;
+}
+
+.redes_sociales{
+    display: flex;
+    gap: 30px;
+    margin-right: 300px;
+    margin-top: 150px;
+}
+
+.redes_sociales img{
+    width: 40px;
+    height: 40px;
+}
+
+.lienas_footer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.linea_pie_pagina{
+    background-color: #313131;
+    width: 10%;
+    height: 2px;
+}
+
+.final_footer{
+    display: flex;
+    background-color: #313131;
+    color: #fff;
+    justify-content: center;
+    gap: 650px;
+    padding-bottom:20px ;
+}

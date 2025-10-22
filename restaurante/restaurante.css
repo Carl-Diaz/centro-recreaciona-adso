@@ -1,0 +1,465 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    padding-top: 170px;
+}
+
+.container_nav {
+    background-color: #002237;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;            
+    padding: 5px 40px;
+    position: fixed;  /* 🔥 se queda fijo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;    /* queda por encima del contenido */
+}
+
+.logo {
+    display: flex;
+    flex-direction: column; /* Logo arriba y texto abajo */
+    align-items: center;
+    margin-left: 80px;
+    margin-top: 15px;
+    padding: 0;
+}
+
+.logo img {
+    max-width: 180px;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.logo h3 {
+    position: relative;
+    margin-top: -20px;
+    padding: 0;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+    font-family: 'Baloo Bhai', sans-serif;
+}
+
+.navegador ul {
+    list-style: none; /* elimina punticos */
+    margin: 0;
+    padding: 0;
+    display: flex; /* organiza los li en fila */
+    gap: 130px; /* espacio entre elementos */
+}
+
+.navegador li {
+    display: inline;
+}
+
+.navegador a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 25px;
+}
+
+.navegador a:hover {
+    text-decoration: underline;
+}
+
+/*  Submenús (dropdowns) */
+.navegador li ul {
+    position: absolute;
+    top: 57%;   /* debajo del li padre */
+    left: 63.5%;
+    background: #002237;
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    display: none; /* oculto por defecto */
+    flex-direction: column;
+    min-width: 200px;
+    align-items:center;
+    gap: 0;
+}
+
+.navegador li ul li a {
+    display: block;
+    padding: 10px;
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.navegador li ul li a:hover {
+    background: #0056b3;
+}
+
+/* 👆 Mostrar submenú al pasar el mouse */
+.navegador li:hover ul {
+    display: flex;
+}
+
+.btn-login button {
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    padding: 12px 40px;
+    margin-right: 120px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-size: 25px;
+    border-radius: 5px;
+}
+
+.btn-login button:hover {
+    background-color: #007bff;
+}
+
+
+/* Botón flotante */
+.menu-btn {
+    position: fixed;
+    top: 200px;
+    left: 0;
+    background: #1E90FF;
+    color: white;
+    font-size: 28px;
+    border-radius: 0 20px 20px 0;
+    padding: 12px 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.7);
+    transition: transform 0.3s ease, background 0.3s ease;
+    z-index: 1000;
+}
+
+.menu-btn:hover {
+    transform: scale(1.1);
+    background: #187bcd;
+}
+
+
+.icono img {
+    width: 60px;
+    height: 40px;
+    margin-left: 20px;
+    filter: invert(34%) sepia(99%) saturate(7471%) hue-rotate(204deg) brightness(95%) contrast(101%);
+}
+
+
+
+.icono:hover {
+    filter: invert(51%) sepia(93%) saturate(478%) hue-rotate(82deg) brightness(95%) contrast(93%);
+    transition: 0.3s;
+}
+
+
+
+    /* Menú lateral */
+.menu {
+    position: fixed;
+    top: 160px;
+    left: -400px;
+    width: 400px;
+    height: 800px;
+    background: rgba(20, 30, 48, 0.97);
+    padding-top: 80px;
+    transition: right 0.4s ease;
+    box-shadow: -4px 0 10px rgba(0,0,0,0.4);
+    z-index: 999;
+}
+
+.menu ul {
+    list-style: none;
+}
+
+.menu li {
+    margin: 25px 0;
+    text-align: left;
+    display: flex;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    transition: color 0.3s ease;
+    display: flex; 
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.menu button{
+    font-family: 'Baloo Bhai', sans-serif;
+    font-size: 25px;
+    background-color: rgb(142, 199, 78);
+    color: #fff;
+    border: none;
+    padding: 5px 110px;
+    cursor: pointer;
+
+
+}
+
+.menu button:hover{ 
+    background-color: green; 
+} 
+
+
+    /* Clase activa (abre el menú) */
+.menu.open {
+    left: 0;
+}
+
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 800px; /* ajusta la altura que necesites */
+    background: url("/img/restaurante/seccion-restaurante.jpg") center/cover no-repeat;
+    display: flex;
+    align-items: flex-end; /* texto abajo */
+    justify-content: center; /* texto centrado */
+    margin-top: -10px;
+}
+
+.banner-texto {
+    margin-bottom: 30px;
+    color: #e67e22; /* naranja parrilla */
+    font-family: 'Alfa Slab One', serif;
+    font-size: 60px;
+    text-transform: uppercase;
+    text-align: center;
+    background: rgba(0,0,0,0.5); /* opcional: fondo para mejor legibilidad */
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.container-titulos-restaurante{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+
+.restaurante-adso {
+    margin-top: 40px;
+    font-size: 50px;
+}
+
+.subtitulo {
+    font-family: 'Great Vibes', cursive;    
+    color: #AF9200;
+    margin: 10px 0 40px;
+    font-size: 50px;
+}
+
+
+.menu-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap; /* se adapta en pantallas pequeñas */
+    padding: 0 20px;
+}
+
+
+.card {
+    flex: 1 1 300px; /* ancho mínimo 300px */
+    max-width: 350px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding-bottom: 20px;
+}
+
+.card img {
+    width: 100%;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
+}
+
+.card h3 {
+    margin: 15px 0 10px;
+    font-size: 1.3rem;
+}
+
+.card p {
+    font-size: 0.95rem;
+    color: #444;
+    margin: 0 0 10px;
+}
+
+.precio {
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.container-menu{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.container-titulo-menu h2{
+    font-size: 50px;
+    color: #fff;
+    position: relative;
+}
+
+.container-menu .columnas {
+    display: flex;
+    color: #fff;
+    text-align: left;
+    gap: 100px;
+}
+
+.container-menu .columnas .columna-izquierda {
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+}
+
+.container-menu .columnas .columna-izquierda p{
+    font-size: 20px;
+}
+
+.container-menu .columnas .columna-izquierda .almuerzo {
+    font-size: 40px;
+    font-family: 'Alfa Slab One', serif;
+
+}
+
+
+.container-menu .columnas .columna-derecha p{
+    font-size: 20px;
+}
+
+.container-menu .columnas .columna-derecha .bebidas {
+    font-size: 40px;
+    font-family: 'Alfa Slab One', serif;
+}
+
+.container-menu .columnas .columna-derecha .cervezas {
+    font-size: 40px;
+    font-family: 'Alfa Slab One', serif;
+
+}
+
+.container-menu .columnas .columna-derecha .gaseosas {
+    font-size: 30px;
+    font-family: 'Alfa Slab One', serif;
+
+}
+
+.container-menu .columnas .columna-derecha {
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+}
+
+
+
+
+.container-menu {
+    position: relative;
+    width: 100%;
+    height: 900px; /* ajusta la altura que necesites */
+    background: url("/img/restaurante/menu-restaurante.jpg") center/cover no-repeat;
+    display: flex;
+    align-items: center; /* texto abajo */
+    justify-content: center; /* texto centrado */
+}
+
+.container_footer{
+    display: flex;
+    width: 100%;
+    background-color: #313131;
+    justify-content: space-between;
+    color: #fff;
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+    margin-top: 40px;
+}
+
+
+.container_footer .info_footer{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.container_footer .info_footer p{
+    margin-top: 10px;
+}
+
+
+.container_footer h4{
+    font-size: 40px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.container_footer .icono1{
+    display: flex;
+    gap: 10px;
+}
+
+
+.container_footer img{
+    width: 40px;
+    height: 40px;
+    
+}
+
+.container_footer .logo{
+    width: 400px;
+    height: 300px;
+    position: relative;
+    margin-top: 50px;
+    margin-left: 200px;
+}
+
+.redes_sociales{
+    display: flex;
+    gap: 30px;
+    margin-right: 300px;
+    margin-top: 150px;
+}
+
+.redes_sociales img{
+    width: 40px;
+    height: 40px;
+}
+
+.lienas_footer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.linea_pie_pagina{
+    background-color: #313131;
+    width: 10%;
+    height: 2px;
+}
+
+.final_footer{
+    display: flex;
+    background-color: #313131;
+    color: #fff;
+    justify-content: center;
+    gap: 650px;
+    padding-bottom:20px ;
+}
+

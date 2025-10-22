@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    justify-content:center;
+    height: 970px;
+    font-family: 'Quicksand', sans-serif;
+    gap: 10px;
+
+}
+
+img{
+    width: 300px;
+}
+
+h2{
+    font-size: 40px;
+}
+
+.info{
+    font-size: 20px;
+    width: 500px;
+    color: #808080;
+}
+
+.codigo{
+    text-align: left;
+    width: 21%;
+    font-size: 25px;
+}
+
+.numero{
+    border: 2px solid #808080;
+    font-size: 20px;
+    width: 20%;
+    text-align: left;
+    padding: 10px;
+    border-radius: 10px;
+
+}
+
+a{
+    text-decoration: none;
+    font-size: 25px;
+    width: 20%;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #1639ED;
+    color: #fff;
+
+}

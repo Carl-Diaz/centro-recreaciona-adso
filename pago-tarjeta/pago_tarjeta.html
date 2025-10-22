@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pago por Tarjeta </title>
+    <link rel="icon" type="image/png" href="/logo.png">
+    <link rel="stylesheet" href="/pago-tarjeta/pago_tarjeta.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="container">
+        <img src="/logo.png" alt="Logo de la pagina">
+        <form action="/registro/registro.html">
+            <label>Pago por tarjeta Debito / Crédito</label>
+            <input type="text" placeholder="Nombre del titular">
+            <input type="number" placeholder="N. Documento">
+            <input type="number" placeholder="Numero de la tarjeta">
+            <input class="date" type="date" placeholder="Fecha caducidad">
+            <input type="number" placeholder="Código de seguridad (CVV/CVC)">
+            <select required>
+                    <option value="">Afiliación  / Reserva</option>
+                    <option value="Afiliacion">Afiliación</option>
+                    <option value="Reserva">Reserva</option>
+                </select>
+            <button type="submit">Pagar</button>
+            <a href="/registro/registro.html">←Volver al método de pago</a>
+        </form>
+    </div>
+</body>
+</html>
