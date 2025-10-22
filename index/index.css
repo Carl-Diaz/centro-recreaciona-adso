@@ -17,13 +17,13 @@ body {
     display: flex;
     justify-content: space-between; 
     align-items: center;            
-    padding: 5px 40px;
-
-    position: fixed;  /* 🔥 se queda fijo */
+    padding: 15px 40px;
+    position: fixed;  /*  se queda fijo */
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;    /* queda por encima del contenido */
+    flex-wrap: wrap;
 }
 
 .logo {
@@ -57,6 +57,8 @@ body {
     padding: 0;
     display: flex; /* organiza los li en fila */
     gap: 130px; /* espacio entre elementos */
+        flex-wrap: wrap;
+
 }
 
 .navegador li {
@@ -199,11 +201,11 @@ body {
 .menu button{
     position: relative;
     font-family: 'Baloo Bhai', sans-serif;
-    font-size: 25px;
+    font-size: 20px;
     background-color: rgb(142, 199, 78);
     color: #fff;
     border: none;
-    padding: 5px 110px;
+    padding: 5px 117px;
     cursor: pointer;
 
 
@@ -259,12 +261,13 @@ body {
     padding: 0 50px;  
     font-family: 'Nunito', sans-serif;
     margin-left: 100px;
+    margin-top: 50px;
 }
 
 .titulos {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10px;
+    margin-bottom: 40px;
     text-align: center;
 }
 
@@ -283,7 +286,7 @@ body {
     font-size: 45px;
     font-weight: bold;
     margin-left: 170px;
-    margin-top: -50px;
+    margin-top: 20px;
 }
 
 .entrada .precio {
@@ -443,7 +446,7 @@ body {
     height: 2px;
     background-color: #E53935; 
     margin-right: 900px;
-    margin-top: -50px;
+    margin-top: -15px;
 }
 
 .container-escenarios_deportivos .linea-vertical{
@@ -521,7 +524,7 @@ body {
     height: 2px;
     background-color: #E53935; 
     margin-left: 49%;
-    margin-top: -30px;
+    margin-top: -10px;
 }
 
 .linea_vertical_parqueadero{
@@ -535,9 +538,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 50px auto;
+    margin: 30px auto;
     gap: 89px;
-    
+    margin-left: -7px;
 }
 
 .imagen_parqueadero {
@@ -568,16 +571,17 @@ body {
     margin-bottom: -40px;
 }
 
-.icono_informacion_parqueadero .icono{
+.icono_informacion_parqueadero .iconos{
     display: flex;
     flex-direction: row;
     color: #fff;
     
 }
 
-.icono_informacion_parqueadero .icono p{
+.icono_informacion_parqueadero .iconos p{
     font-size: 15px;
-    margin-left: -20px;
+    margin-left: -35px;
+    margin-top: 40px
 }
 
 .icono_informacion_parqueadero img {
@@ -588,6 +592,7 @@ body {
     padding: 5px;
     border-radius: 40px;
     justify-content: space-between;
+    margin-top: 20px;
 }
 
 .titulo_container_restaurante_adso {
@@ -597,6 +602,8 @@ body {
     text-align: center;
     margin: 50px auto;
     font-size: 40px;
+    display: flex;
+    flex-direction: column;
 }
 
 .btn_acceder_restaurante .btn-acceder {
@@ -615,9 +622,6 @@ body {
     background-color: #E53935;
 }
 
-.titulo_container_restaurante_adso h3 {
-    margin-top: -50px;
-}
 
 .collage_restaurante {
     display: flex;
@@ -651,8 +655,10 @@ body {
     color: #0D0633; 
     text-transform: uppercase; 
     text-align: center;
-    margin: 50px auto;
     font-size: 40px;
+    display: flex;
+    flex-direction: column;
+    margin: 30px;
 }
 
 .titulo_container_tienda_adso p{
@@ -662,7 +668,6 @@ body {
     font-size: 30px;
     text-align: justify;
     padding: 0 300px 0 300px;
-    margin-top: -60px;
 }
 
 .container_tienda_adso{
@@ -732,10 +737,6 @@ body {
 }
 
 
-.salon img{
-    margin-top: 100px;
-}
-
 .info_salon{
     display: flex;
     background: rgba(0, 1, 59, 0.8);
@@ -750,6 +751,7 @@ body {
     color: #fff;
     margin-left: 220px;
     margin-top: -200px;
+    margin-bottom: 30px;
 }
 
 .info_salon p{
@@ -806,6 +808,7 @@ body {
 .info_restricciones {
     flex: 1;            /* el texto ocupa el resto del espacio */
     margin-left: 800px;
+    margin-top: 40px;
 }
 
 .info_restricciones h2 {
@@ -830,9 +833,10 @@ body {
 }
 
 .img_restricciones img{
-    width: 750px; 
-    margin-top: -500px;
+    width: 400px; 
+    margin-top: -600px;
     position: absolute;
+    margin-left: 400px;
 }
 
 .container_comentarios {
@@ -856,7 +860,8 @@ body {
 }
 
 .info_comentarios .p1,
-.info_comentarios .p2 {
+.info_comentarios .p2,
+.info_comentarios .p3 {
     position: relative;
     background: #fff;
     padding: 20px 50px;
@@ -872,7 +877,8 @@ body {
 
 /* Bocadillo (triángulo abajo) */
 .info_comentarios .p1::after,
-.info_comentarios .p2::after {
+.info_comentarios .p2::after,
+.info_comentarios .p3::after {
     content: "";
     position: absolute;
     bottom: -20px;
@@ -953,11 +959,17 @@ body {
 
 .container_footer h4{
     font-size: 40px;
+    margin-top: 40px;
 }
 
 .container_footer .icono1{
     display: flex;
-    gap: 10px;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.container_footer .icono1 p{
+    margin-top: 10px;
 }
 
 
@@ -1004,4 +1016,145 @@ body {
     color: #fff;
     justify-content: center;
     gap: 650px;
+}
+
+
+/* ===== RESPONSIVE PARA MÓVILES 375px ===== */
+@media (max-width: 375px) {
+    body {
+        padding-top: 70px;
+    }
+
+    .container_nav {
+        padding: 10px 15px;
+        justify-content: space-between;
+        height: auto;
+    }
+
+    /* Logo y título en horizontal */
+    .logo {
+        flex-direction: row !important;
+        margin-left: 0 !important;
+        margin-top: 0 !important;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .logo img {
+        max-width: 50px !important;
+    }
+
+    .logo h3 {
+        margin-top: 0 !important;
+        font-size: 12px !important;
+        white-space: nowrap;
+    }
+
+    /* Ocultar navegador principal y botón login */
+    .navegador {
+        display: none !important;
+    }
+
+    .btn-login {
+        display: none !important;
+    }
+
+    /* Botón hamburguesa visible en la esquina superior derecha */
+    .menu-btn {
+        position: fixed !important;
+        top: 15px !important;
+        right: 15px !important;
+        left: auto !important;
+        font-size: 26px !important;
+        padding: 8px 14px !important;
+        border-radius: 5px !important;
+        background: #1E90FF !important;
+        color: white !important;
+        z-index: 1001 !important;
+        cursor: pointer !important;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.7) !important;
+    }
+
+    /* Menú lateral */
+    .menu {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 280px;
+        height: 100vh;
+        padding-top: 80px;
+        overflow-y: auto;
+        background: rgba(20, 30, 48, 0.97);
+        transition: left 0.4s ease;
+        z-index: 1000;
+    }
+
+    .menu.open {
+        left: 0 !important;
+    }
+
+    .menu ul {
+        padding: 20px;
+        list-style: none;
+    }
+
+    .menu li {
+        margin: 15px 0;
+    }
+
+    .menu a {
+        font-size: 16px !important;
+    }
+
+    .icono {
+        display: block;
+    }
+
+    .icono img {
+        width: 25px !important;
+        height: 25px !important;
+        margin-left: 0 !important;
+    }
+
+    /* Botón cerrar sesión dentro del menú */
+    .menu button {
+        width: calc(100% - 40px) !important;
+        padding: 12px 20px !important;
+        margin: 20px 20px !important;
+        font-size: 16px !important;
+        border-radius: 5px !important;
+    }
+}
+
+/* ===== RESPONSIVE PARA TABLETS Y MÓVILES MEDIANOS ===== */
+@media (min-width: 376px) and (max-width: 768px) {
+    .logo {
+        margin-left: 20px;
+    }
+
+    .logo img {
+        max-width: 120px;
+    }
+
+    .logo h3 {
+        font-size: 16px;
+    }
+
+    .navegador ul {
+        gap: 40px;
+    }
+
+    .navegador a {
+        font-size: 18px;
+    }
+
+    .btn-login button {
+        padding: 10px 30px;
+        font-size: 20px;
+        margin-right: 20px;
+    }
+
+    .menu-btn {
+        display: none;
+    }
 }
